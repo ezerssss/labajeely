@@ -1,1 +1,2 @@
-# CMSC128
+# Labajeely
+Business Management for Laundry Shops
