@@ -74,7 +74,10 @@ function LaundryCard({
 
           <div className="mt-3 flex flex-wrap gap-[6px]">
             {item.services.sort().map((service) => (
-              <div className="flex h-5 w-12 items-center justify-center rounded-2xl bg-[#173563] text-[10px] font-bold text-white">
+              <div
+                className="flex h-5 w-12 items-center justify-center rounded-2xl bg-[#173563] text-[10px] font-bold text-white"
+                key={`${service}-${item.id}`}
+              >
                 {service}
               </div>
             ))}
@@ -105,7 +108,7 @@ function Column(props: ColumnPropsInterface) {
             className="h-[470px] overflow-auto rounded-xl bg-[#D8EAF9] p-3"
           >
             {items.map((item, index) => (
-              <LaundryCard item={item} index={index} />
+              <LaundryCard item={item} index={index} key={item.id} />
             ))}
             {provided.placeholder}
           </div>
@@ -170,8 +173,6 @@ export default function Board() {
     "waiting-for-customer": [],
     done: [],
   });
-
-  console.log(items);
 
   return (
     <div className="flex flex-wrap gap-2">
