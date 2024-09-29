@@ -130,10 +130,9 @@ function handleDragEnd(
 
   const { source, destination } = result;
 
-  // Same column
   if (source.droppableId === destination.droppableId) {
     const column = items[source.droppableId];
-    const updatedColumnItems = [...column]; // Locally copy array to not overwrite state
+    const updatedColumnItems = [...column];
 
     const [item] = updatedColumnItems.splice(source.index, 1);
 
