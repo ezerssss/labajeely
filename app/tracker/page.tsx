@@ -3,12 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "./Tracker.css";
 import { ShoppingCart, Settings, Package, Check } from "lucide-react";
-
-
-const generateTrackingNumber = () => {
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-  return Array.from({ length: 12 }, () => characters.charAt(Math.floor(Math.random() * characters.length))).join('');
-};
+import { generateTrackingNumber } from "@/lib/utils";
 
 const status = [
   "Confirmed Order", 
@@ -31,7 +26,7 @@ const icons = [
   <Check size={50} />
 ]; 
 
-const Tracker = () => {  
+export default function Tracker () {  
 
   const [currentStatus, setCurrentStatus] = useState(0);
   const [complete, setComplete] = useState(false);
@@ -65,7 +60,7 @@ const Tracker = () => {
         clearInterval(interval);
       }
     }, 11000);
-    
+
     return () => clearInterval(interval);
   }, [currentStatus, status, messages]);
 
@@ -84,7 +79,7 @@ const Tracker = () => {
         <div className="text-left overflow-y-auto mt-[30px]">
           {orderHistory.map((order, index) => (
             <div 
-              key={index} 
+            key={order.message} 
               className="relative flex"
             >
               <div className="flex flex-col items-center mr-5">
@@ -114,7 +109,7 @@ const Tracker = () => {
               {icons[index]}
             </div>
             <p className="font-bold text-[13px] text-[#173563]">
-              {status}
+            {status}
             </p>
           </div>
         ))}
@@ -124,6 +119,4 @@ const Tracker = () => {
 
     </div>
   );
-};
-
-export default Tracker;
+}

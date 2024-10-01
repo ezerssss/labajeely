@@ -15,7 +15,7 @@ function HomePage() {
 
       <div className="mt-8">
         <Link href="/tracker" className="bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
-          Laundry Tacker
+          Laundry Tracker
         </Link>
       </div>
     </main>
