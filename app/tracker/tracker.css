@@ -1,0 +1,42 @@
+.status-line {
+  @apply relative flex flex-col justify-center items-center w-[200px];
+}
+
+.status-line:not(:first-child):before {
+  @apply content-[''] bg-white absolute w-full h-[5px] right-2/4 -translate-y-1/4;
+}
+
+.status {
+  @apply w-[95px] h-[95px] flex items-center justify-center z-10 relative bg-white rounded-full text-[#173563];
+}
+
+.active .status {
+  @apply bg-[#349AD6] text-white;
+}
+
+.complete .status {
+  @apply bg-[#349AD6] text-white;
+}
+
+.complete:not(:first-child):before,
+.active:not(:first-child):before {
+  @apply bg-[#349AD6];
+}
+
+.bullet {
+  @apply w-[20px] h-[20px] flex justify-center rounded-full;
+}
+  
+.bullet.active {
+    @apply bg-[#349AD6];
+}
+  
+.line {
+  @apply w-[3px] h-full absolute;
+}
+
+.bullet.active + .line {
+  @apply bg-[#349AD6]; 
+}
+  
+  
