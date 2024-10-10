@@ -1,4 +1,4 @@
-import { ServicesEnum } from "../enums/services";
+import { ServicesEnum } from "../../enums/services";
 
 export interface LaundryCardInterface {
   id: string;

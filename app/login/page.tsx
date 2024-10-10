@@ -63,9 +63,9 @@ export default function LoginPage() {
           <CardContent>
             <form className="space-y-4">
               <FormInput
-                label="Username"
+                label="Email"
                 type="text"
-                placeholder="Enter your username"
+                placeholder="Enter your email"
               />
               <FormInput
                 label="Password"

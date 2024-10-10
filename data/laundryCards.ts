@@ -1,5 +1,5 @@
 import { ServicesEnum } from "@/app/enums/services";
-import { LaundryCardInterface } from "@/app/types/item";
+import { LaundryCardInterface } from "@/app/types/client/item";
 
 export const tempLaundryCardData: LaundryCardInterface[] = [
   {
