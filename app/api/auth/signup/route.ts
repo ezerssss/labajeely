@@ -7,7 +7,7 @@ import { SignUpRequestSchema, UserDataType } from "@/app/types/server/auth";
 import { LaundryShopType } from "@/app/types/server/shop";
 
 const userCollectionRef = serverDb.collection("users");
-const laundryShopsCollectionRef = serverDb.collection("laundryShops");
+const shopsCollectionRef = serverDb.collection("shops");
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     const { laundryShopName, laundryShopImage, numMachines, ...user } = data;
 
     // Create laundry shop profile
-    const laundryShopDocumentRef = await laundryShopsCollectionRef.add({});
+    const laundryShopDocumentRef = await shopsCollectionRef.add({});
     const laundryShopID = laundryShopDocumentRef.id;
 
     const laundryProfile: LaundryShopType = {

@@ -29,11 +29,14 @@ import {
 import clientAuth from "../firebase/clientAuth";
 import { toast } from "sonner";
 import { FormStepOne, FormStepTwo } from "./FormSteps";
+import { useRouter } from "next/navigation";
 
 export default function SignupPage() {
   const [step, setStep] = useState(1);
   const [imageBlob, setImageBlob] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
 
   const signUpForm = useForm<SignUpFormType>({
     resolver: zodResolver(SignUpFormSchema),
@@ -95,6 +98,7 @@ export default function SignupPage() {
       signUpForm.reset();
       setImageBlob(null);
       toast.success(message);
+      router.push("/login");
     } catch (error) {
       toast.error(getErrorMessage(error));
 
