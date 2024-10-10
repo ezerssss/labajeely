@@ -8,7 +8,7 @@ import {
   Draggable,
   DropResult,
 } from "@hello-pangea/dnd";
-import { LaundryCardInterface } from "@/app/types/item";
+import { LaundryCardInterface } from "@/app/types/client/item";
 import { tempLaundryCardData } from "@/data/laundryCards";
 import { Card } from "./ui/card";
 import { HomeIcon, ScaleIcon, ShoppingBagIcon } from "lucide-react";

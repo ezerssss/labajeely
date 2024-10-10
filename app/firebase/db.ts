@@ -1,6 +1,6 @@
-import app from ".";
+import serverApp from ".";
 import { getFirestore } from "firebase-admin/firestore";
 
-const db = getFirestore(app);
+const serverDb = getFirestore(serverApp);
 
-export default db;
+export default serverDb;
